@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_prescription" model="ir.actions.report">
+        <field name="name">Prescription</field>
+        <field name="model">pharmacy.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sa_pharmacy_management.report_prescription_document</field>
+        <field name="report_file">sa_pharmacy_management.report_prescription_document</field>
+        <field name="binding_model_id" ref="model_pharmacy_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_pharmacy_label" model="ir.actions.report">
+        <field name="name">Dispensing Label</field>
+        <field name="model">pharmacy.dispense</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sa_pharmacy_management.report_pharmacy_label_document</field>
+        <field name="report_file">sa_pharmacy_management.report_pharmacy_label_document</field>
+        <field name="binding_model_id" ref="model_pharmacy_dispense"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

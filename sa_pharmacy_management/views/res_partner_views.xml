@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_pharmacy" model="ir.ui.view">
+        <field name="name">res.partner.form.pharmacy</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_prescriptions" type="object"
+                        class="oe_stat_button" icon="fa-file-text-o"
+                        invisible="not is_patient">
+                    <field name="prescription_count" widget="statinfo"
+                           string="Prescriptions"/>
+                </button>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Patient Profile" name="patient_profile"
+                      invisible="not is_patient">
+                    <group>
+                        <group string="Demographics">
+                            <field name="patient_code"/>
+                            <field name="date_of_birth"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="blood_group"/>
+                            <field name="is_pregnant"/>
+                        </group>
+                        <group string="Clinical &amp; Insurance">
+                            <field name="allergy_ids" widget="many2many_tags"
+                                   options="{'no_create_edit': False}"/>
+                            <field name="chronic_conditions"/>
+                            <field name="emergency_contact"/>
+                            <field name="insurance_provider_id"/>
+                            <field name="insurance_number"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Prescriber Profile" name="prescriber_profile"
+                      invisible="not is_prescriber">
+                    <group>
+                        <field name="prescriber_license"/>
+                        <field name="prescriber_specialty"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="is_patient"/>
+                <field name="is_prescriber"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_patients" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_patient','=',True)]</field>
+        <field name="context">{'default_is_patient': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register your first patient
+            </p><p>
+                Patient profiles capture allergies and history so dispensing is
+                screened for safety automatically.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_prescribers" model="ir.actions.act_window">
+        <field name="name">Prescribers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_prescriber','=',True)]</field>
+        <field name="context">{'default_is_prescriber': True, 'default_is_company': False}</field>
+    </record>
+
+</odoo>

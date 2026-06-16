@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- AI Assistant wizard -->
+    <record id="view_pharmacy_ai_assistant_form" model="ir.ui.view">
+        <field name="name">pharmacy.ai.assistant.form</field>
+        <field name="model">pharmacy.ai.assistant</field>
+        <field name="arch" type="xml">
+            <form string="AI Clinical Assistant">
+                <sheet>
+                    <div class="oe_title">
+                        <h2 style="color:#E8242A;">
+                            <i class="fa fa-magic"/> PharmaCore AI Assistant
+                        </h2>
+                    </div>
+                    <group>
+                        <field name="prescription_id"/>
+                        <field name="patient_id" readonly="1"/>
+                    </group>
+                    <field name="question"
+                           placeholder="Ask a clinical question, e.g. 'Counselling points for metformin?'"/>
+                    <field name="provider_label" invisible="not provider_label"
+                           readonly="1"/>
+                    <field name="answer" invisible="not answer" readonly="1"/>
+                </sheet>
+                <footer>
+                    <button name="action_ask" type="object"
+                            string="Ask" class="btn-primary"/>
+                    <button string="Close" class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pharmacy_ai_assistant" model="ir.actions.act_window">
+        <field name="name">AI Assistant</field>
+        <field name="res_model">pharmacy.ai.assistant</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Smart reorder planner -->
+    <record id="view_pharmacy_reorder_wizard_form" model="ir.ui.view">
+        <field name="name">pharmacy.reorder.wizard.form</field>
+        <field name="model">pharmacy.reorder.wizard</field>
+        <field name="arch" type="xml">
+            <form string="AI Smart Reorder Planner">
+                <sheet>
+                    <div class="oe_title">
+                        <h2 style="color:#E8242A;">
+                            <i class="fa fa-line-chart"/> AI Demand Forecast
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="horizon_days"/>
+                            <field name="history_days"/>
+                        </group>
+                        <group>
+                            <field name="only_shortfall"/>
+                        </group>
+                    </group>
+                    <field name="line_ids" invisible="not line_ids">
+                        <tree string="Forecast" create="false">
+                            <field name="product_id"/>
+                            <field name="daily_velocity"/>
+                            <field name="projected_demand"/>
+                            <field name="on_hand"/>
+                            <field name="near_expiry"/>
+                            <field name="suggested_qty"
+                                   decoration-danger="suggested_qty > 0"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="action_compute" type="object"
+                            string="Run Forecast" class="btn-primary"/>
+                    <button string="Close" class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pharmacy_reorder_wizard" model="ir.actions.act_window">
+        <field name="name">Smart Reorder</field>
+        <field name="res_model">pharmacy.reorder.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

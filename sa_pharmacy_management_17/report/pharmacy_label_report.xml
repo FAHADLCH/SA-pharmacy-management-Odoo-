@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_pharmacy_label_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-foreach="doc.line_ids" t-as="line">
+                    <div class="page" style="padding:8px;border:1px solid #ddd;">
+                        <div style="border-bottom:2px solid #E8242A;padding-bottom:4px;margin-bottom:6px;">
+                            <strong style="font-size:14px;"
+                                    t-field="doc.company_id.name"/>
+                            <span style="float:right;color:#9aa5b1;font-size:10px;"
+                                  t-field="doc.name"/>
+                        </div>
+                        <div style="font-size:13px;">
+                            <strong t-field="doc.patient_id.name"/>
+                            <span style="float:right;"
+                                  t-field="doc.dispense_date"
+                                  t-options="{'widget': 'date'}"/>
+                        </div>
+                        <div style="font-size:15px;font-weight:700;margin:4px 0;">
+                            <span t-field="line.product_id.display_name"/>
+                        </div>
+                        <div style="font-size:13px;">
+                            Qty: <span t-field="line.product_qty"/> •
+                            Batch: <span t-field="line.lot_id.name"/>
+                        </div>
+                        <div t-if="line.expiration_date" style="font-size:12px;color:#a02622;">
+                            Expiry:
+                            <span t-field="line.expiration_date"
+                                  t-options="{'widget': 'date'}"/>
+                        </div>
+                        <div t-if="line.dosage"
+                             style="font-size:13px;margin-top:4px;padding:4px;background:#f7f7f9;border-radius:4px;">
+                            <strong>Directions:</strong>
+                            <span t-field="line.dosage"/>
+                        </div>
+                        <div t-if="line.product_id.storage_condition"
+                             style="font-size:11px;color:#627d98;margin-top:4px;">
+                            Storage:
+                            <span t-field="line.product_id.storage_condition"/>
+                        </div>
+                        <div style="font-size:10px;color:#9aa5b1;margin-top:6px;text-align:center;">
+                            Keep out of reach of children • Dispensed by
+                            <span t-field="doc.pharmacist_id.name"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

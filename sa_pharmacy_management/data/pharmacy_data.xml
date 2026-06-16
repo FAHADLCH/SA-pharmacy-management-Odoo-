@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Seed common active ingredients -->
+        <record id="ing_paracetamol" model="pharmacy.active.ingredient">
+            <field name="name">Paracetamol</field>
+            <field name="code">PARA</field>
+            <field name="atc_code">N02BE01</field>
+            <field name="therapeutic_class">Analgesic / Antipyretic</field>
+        </record>
+        <record id="ing_ibuprofen" model="pharmacy.active.ingredient">
+            <field name="name">Ibuprofen</field>
+            <field name="code">IBU</field>
+            <field name="atc_code">M01AE01</field>
+            <field name="therapeutic_class">NSAID</field>
+        </record>
+        <record id="ing_warfarin" model="pharmacy.active.ingredient">
+            <field name="name">Warfarin</field>
+            <field name="code">WARF</field>
+            <field name="atc_code">B01AA03</field>
+            <field name="therapeutic_class">Anticoagulant</field>
+        </record>
+        <record id="ing_aspirin" model="pharmacy.active.ingredient">
+            <field name="name">Acetylsalicylic Acid (Aspirin)</field>
+            <field name="code">ASA</field>
+            <field name="atc_code">B01AC06</field>
+            <field name="therapeutic_class">Antiplatelet / NSAID</field>
+        </record>
+        <record id="ing_amoxicillin" model="pharmacy.active.ingredient">
+            <field name="name">Amoxicillin</field>
+            <field name="code">AMOX</field>
+            <field name="atc_code">J01CA04</field>
+            <field name="therapeutic_class">Penicillin Antibiotic</field>
+        </record>
+        <record id="ing_metformin" model="pharmacy.active.ingredient">
+            <field name="name">Metformin</field>
+            <field name="code">MET</field>
+            <field name="atc_code">A10BA02</field>
+            <field name="therapeutic_class">Antidiabetic (Biguanide)</field>
+        </record>
+        <record id="ing_codeine" model="pharmacy.active.ingredient">
+            <field name="name">Codeine</field>
+            <field name="code">COD</field>
+            <field name="atc_code">R05DA04</field>
+            <field name="therapeutic_class">Opioid Analgesic</field>
+            <field name="is_controlled" eval="True"/>
+        </record>
+        <record id="ing_tramadol" model="pharmacy.active.ingredient">
+            <field name="name">Tramadol</field>
+            <field name="code">TRAM</field>
+            <field name="atc_code">N02AX02</field>
+            <field name="therapeutic_class">Opioid Analgesic</field>
+            <field name="is_controlled" eval="True"/>
+        </record>
+
+        <!-- Seed clinically significant interactions -->
+        <record id="inter_warfarin_aspirin" model="pharmacy.drug.interaction">
+            <field name="ingredient_a_id" ref="ing_warfarin"/>
+            <field name="ingredient_b_id" ref="ing_aspirin"/>
+            <field name="severity">major</field>
+            <field name="description">Additive anticoagulant/antiplatelet effect markedly increases bleeding risk.</field>
+            <field name="clinical_advice">Avoid combination where possible; if required, monitor INR closely and watch for bleeding.</field>
+        </record>
+        <record id="inter_warfarin_ibuprofen" model="pharmacy.drug.interaction">
+            <field name="ingredient_a_id" ref="ing_warfarin"/>
+            <field name="ingredient_b_id" ref="ing_ibuprofen"/>
+            <field name="severity">major</field>
+            <field name="description">NSAID increases bleeding risk and may displace warfarin from protein binding.</field>
+            <field name="clinical_advice">Prefer paracetamol for analgesia; monitor INR and GI symptoms.</field>
+        </record>
+        <record id="inter_tramadol_codeine" model="pharmacy.drug.interaction">
+            <field name="ingredient_a_id" ref="ing_tramadol"/>
+            <field name="ingredient_b_id" ref="ing_codeine"/>
+            <field name="severity">moderate</field>
+            <field name="description">Additive CNS and respiratory depression; increased seizure risk.</field>
+            <field name="clinical_advice">Avoid concurrent opioids; counsel patient on sedation.</field>
+        </record>
+
+        <!-- Seed common allergens linked to ingredients -->
+        <record id="allergy_penicillin" model="pharmacy.allergy">
+            <field name="name">Penicillin</field>
+            <field name="ingredient_id" ref="ing_amoxicillin"/>
+        </record>
+        <record id="allergy_nsaid" model="pharmacy.allergy">
+            <field name="name">NSAIDs</field>
+            <field name="ingredient_id" ref="ing_ibuprofen"/>
+        </record>
+        <record id="allergy_aspirin" model="pharmacy.allergy">
+            <field name="name">Aspirin / Salicylates</field>
+            <field name="ingredient_id" ref="ing_aspirin"/>
+        </record>
+
+    </data>
+</odoo>

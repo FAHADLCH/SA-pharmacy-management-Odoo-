@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pharmacy_region_list" model="ir.ui.view">
+        <field name="name">pharmacy.region.list</field>
+        <field name="model">pharmacy.region</field>
+        <field name="arch" type="xml">
+            <tree string="Regions">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="control_scheme"/>
+                <field name="receipt_paper"/>
+                <field name="rx_validity_days"/>
+                <field name="narcotic_register_required" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pharmacy_region_form" model="ir.ui.view">
+        <field name="name">pharmacy.region.form</field>
+        <field name="model">pharmacy.region</field>
+        <field name="arch" type="xml">
+            <form string="Region">
+                <header>
+                    <button name="action_apply_region" type="object"
+                            string="Apply This Region" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="flag_emoji" class="oe_inline"
+                                   style="width:2ch;"/>
+                            <field name="name" class="oe_inline"
+                                   placeholder="Region name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Regulatory">
+                            <field name="code"/>
+                            <field name="control_scheme"/>
+                            <field name="narcotic_register_required"/>
+                            <field name="require_patient_id_for_controlled"/>
+                            <field name="rx_validity_days"/>
+                            <field name="max_controlled_validity_days"/>
+                        </group>
+                        <group string="Localisation">
+                            <field name="currency_id"/>
+                            <field name="language_code"/>
+                            <field name="temperature_unit"/>
+                            <field name="receipt_paper"/>
+                            <field name="tax_inclusive"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="Receipt / Label Regulatory Footer">
+                        <field name="regulatory_footer" nolabel="1"
+                               placeholder="Mandatory legal text printed on patient receipts..."/>
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pharmacy_regions" model="ir.actions.act_window">
+        <field name="name">Regions</field>
+        <field name="res_model">pharmacy.region</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure a regional profile
+            </p><p>
+                PharmaCore ships ready-made profiles for the US, EU, UK,
+                Pakistan, UAE and a global default. Pick one in Settings to
+                localise scheduling rules, receipt paper, language and the
+                regulatory footer.
+            </p>
+        </field>
+    </record>
+
+</odoo>

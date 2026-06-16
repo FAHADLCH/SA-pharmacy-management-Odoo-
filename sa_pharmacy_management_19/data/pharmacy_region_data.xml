@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="region_global" model="pharmacy.region">
+            <field name="name">Global / Default</field>
+            <field name="code">GLOBAL</field>
+            <field name="flag_emoji">🌐</field>
+            <field name="sequence">1</field>
+            <field name="control_scheme">who</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">180</field>
+            <field name="max_controlled_validity_days">30</field>
+            <field name="temperature_unit">c</field>
+            <field name="receipt_paper">thermal_80</field>
+            <field name="language_code">en_US</field>
+            <field name="regulatory_footer">Keep all medicines out of the reach of children. Use strictly as directed by your healthcare professional.</field>
+        </record>
+
+        <record id="region_us" model="pharmacy.region">
+            <field name="name">United States</field>
+            <field name="code">US</field>
+            <field name="flag_emoji">🇺🇸</field>
+            <field name="sequence">10</field>
+            <field name="control_scheme">dea</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">365</field>
+            <field name="max_controlled_validity_days">180</field>
+            <field name="temperature_unit">f</field>
+            <field name="receipt_paper">thermal_80</field>
+            <field name="language_code">en_US</field>
+            <field name="require_patient_id_for_controlled" eval="True"/>
+            <field name="regulatory_footer">Federal law (USA) prohibits the transfer of this drug to any person other than the patient for whom it was prescribed. Keep out of reach of children.</field>
+        </record>
+
+        <record id="region_eu" model="pharmacy.region">
+            <field name="name">European Union</field>
+            <field name="code">EU</field>
+            <field name="flag_emoji">🇪🇺</field>
+            <field name="sequence">20</field>
+            <field name="control_scheme">eu</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">90</field>
+            <field name="max_controlled_validity_days">30</field>
+            <field name="temperature_unit">c</field>
+            <field name="receipt_paper">thermal_80</field>
+            <field name="language_code">en_US</field>
+            <field name="tax_inclusive" eval="True"/>
+            <field name="regulatory_footer">Report side effects to your national pharmacovigilance authority. Keep out of the sight and reach of children.</field>
+        </record>
+
+        <record id="region_uk" model="pharmacy.region">
+            <field name="name">United Kingdom</field>
+            <field name="code">GB</field>
+            <field name="flag_emoji">🇬🇧</field>
+            <field name="sequence">30</field>
+            <field name="control_scheme">uk</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">180</field>
+            <field name="max_controlled_validity_days">28</field>
+            <field name="temperature_unit">c</field>
+            <field name="receipt_paper">thermal_80</field>
+            <field name="language_code">en_GB</field>
+            <field name="tax_inclusive" eval="True"/>
+            <field name="regulatory_footer">Keep out of the sight and reach of children. If symptoms persist, talk to your pharmacist or doctor. Report side effects via the Yellow Card Scheme.</field>
+        </record>
+
+        <record id="region_pk" model="pharmacy.region">
+            <field name="name">Pakistan</field>
+            <field name="code">PK</field>
+            <field name="flag_emoji">🇵🇰</field>
+            <field name="sequence">40</field>
+            <field name="control_scheme">custom</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">180</field>
+            <field name="max_controlled_validity_days">30</field>
+            <field name="temperature_unit">c</field>
+            <field name="receipt_paper">thermal_58</field>
+            <field name="language_code">en_US</field>
+            <field name="regulatory_footer">Schedule G &amp; controlled drugs to be sold on valid prescription only (DRAP). Keep out of reach of children. Store below 30°C.</field>
+        </record>
+
+        <record id="region_ae" model="pharmacy.region">
+            <field name="name">United Arab Emirates</field>
+            <field name="code">AE</field>
+            <field name="flag_emoji">🇦🇪</field>
+            <field name="sequence">50</field>
+            <field name="control_scheme">custom</field>
+            <field name="narcotic_register_required" eval="True"/>
+            <field name="rx_validity_days">90</field>
+            <field name="max_controlled_validity_days">30</field>
+            <field name="temperature_unit">c</field>
+            <field name="receipt_paper">thermal_80</field>
+            <field name="language_code">en_US</field>
+            <field name="regulatory_footer">Controlled and semi-controlled medicines dispensed per MoHAP regulations. Store below 25°C. Keep out of reach of children.</field>
+        </record>
+
+    </data>
+</odoo>

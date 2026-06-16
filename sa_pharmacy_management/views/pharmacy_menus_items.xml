@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Operations -->
+    <menuitem id="menu_prescriptions"
+              name="Prescriptions"
+              parent="menu_pharmacy_operations"
+              action="action_prescriptions"
+              sequence="10"/>
+    <menuitem id="menu_dispensings"
+              name="Dispensing"
+              parent="menu_pharmacy_operations"
+              action="action_dispensings"
+              sequence="20"/>
+
+    <!-- Patients -->
+    <menuitem id="menu_patients"
+              name="Patients"
+              parent="menu_pharmacy_patients_root"
+              action="action_patients"
+              sequence="10"/>
+    <menuitem id="menu_prescribers"
+              name="Prescribers"
+              parent="menu_pharmacy_patients_root"
+              action="action_prescribers"
+              sequence="20"/>
+
+    <!-- Catalog -->
+    <menuitem id="menu_medicines"
+              name="Medicines"
+              parent="menu_pharmacy_catalog"
+              action="action_medicines"
+              sequence="10"/>
+    <menuitem id="menu_active_ingredients"
+              name="Active Ingredients"
+              parent="menu_pharmacy_catalog"
+              action="action_active_ingredient"
+              sequence="20"/>
+    <menuitem id="menu_drug_interactions"
+              name="Drug Interactions"
+              parent="menu_pharmacy_catalog"
+              action="action_drug_interaction"
+              sequence="30"/>
+    <menuitem id="menu_allergens"
+              name="Allergens"
+              parent="menu_pharmacy_catalog"
+              action="action_allergy"
+              sequence="40"/>
+
+    <!-- Inventory & Expiry -->
+    <menuitem id="menu_batches"
+              name="Batches &amp; Expiry"
+              parent="menu_pharmacy_inventory"
+              action="action_pharmacy_batches"
+              sequence="10"/>
+    <menuitem id="menu_near_expiry"
+              name="Near-Expiry"
+              parent="menu_pharmacy_inventory"
+              action="action_pharmacy_near_expiry"
+              sequence="20"/>
+    <menuitem id="menu_expiry_report"
+              name="Expiry Report"
+              parent="menu_pharmacy_inventory"
+              action="action_expiry_report_wizard"
+              sequence="30"/>
+
+    <!-- Dashboard -->
+    <menuitem id="menu_dashboard"
+              name="Dashboard"
+              parent="menu_pharmacy_reporting"
+              action="board_pharmacy_dashboard"
+              sequence="10"/>
+    <menuitem id="menu_dispense_analysis"
+              name="Dispensing Analysis"
+              parent="menu_pharmacy_reporting"
+              action="action_dispense_analysis"
+              sequence="20"/>
+    <menuitem id="menu_medicine_sales_analysis"
+              name="Medicine Sales Analysis"
+              parent="menu_pharmacy_reporting"
+              action="action_medicine_sales_analysis"
+              sequence="30"/>
+    <menuitem id="menu_prescription_analysis"
+              name="Prescription Analysis"
+              parent="menu_pharmacy_reporting"
+              action="action_prescription_analysis"
+              sequence="40"/>
+
+    <!-- AI Tools -->
+    <menuitem id="menu_ai_assistant"
+              name="AI Assistant"
+              parent="menu_pharmacy_ai"
+              action="action_pharmacy_ai_assistant"
+              sequence="10"/>
+    <menuitem id="menu_ai_reorder"
+              name="Smart Reorder"
+              parent="menu_pharmacy_ai"
+              action="action_pharmacy_reorder_wizard"
+              sequence="20"/>
+
+    <!-- Configuration -->
+    <menuitem id="menu_pharmacy_settings"
+              name="Settings"
+              parent="menu_pharmacy_config_root"
+              action="action_pharmacy_config_settings"
+              sequence="10"/>
+    <menuitem id="menu_pharmacy_regions"
+              name="Regions"
+              parent="menu_pharmacy_config_root"
+              action="action_pharmacy_regions"
+              sequence="20"/>
+
+</odoo>

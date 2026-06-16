@@ -1,0 +1,22 @@
+// PharmaCore - SA Systems brand accents
+.o_pharmacy_brand {
+    --sa-red: #E8242A;
+    --sa-dark: #1f2933;
+}
+
+// Severity badges on interaction lists
+.o_field_badge.o_pharmacy_severity_major,
+.o_field_badge.o_pharmacy_severity_contraindicated {
+    background-color: rgba(232, 36, 42, 0.12);
+    color: #a02622;
+}
+
+// Expiry status emphasis
+.o_list_table .text-bg-danger {
+    font-weight: 600;
+}
+
+// Pharmacy app menu accent
+.o_main_navbar .o_menu_brand[data-menu-xmlid="sa_pharmacy_management.menu_pharmacy_root"] {
+    color: #E8242A;
+}

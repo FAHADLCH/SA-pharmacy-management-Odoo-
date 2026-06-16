@@ -1,0 +1,41 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- Odoo ----
+*.pyc
+*.pyo
+.~lock.*
+*.swp
+*.swo
+
+# ---- Environments & secrets ----
+.env
+.env.*
+!deploy/.env.example
+*.conf.local
+deploy/odoo.conf.local
+
+# ---- Docker / demo runtime volumes ----
+_demo/odoo-data/
+_demo/db-data/
+_demo/*.log
+deploy/odoo-data/
+deploy/db-data/
+
+# ---- IDE / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.iml
+
+# ---- Logs & temp ----
+*.log
+*.tmp
+*.bak

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_pharmacy_prescription" model="ir.sequence">
+            <field name="name">Pharmacy Prescription</field>
+            <field name="code">pharmacy.prescription</field>
+            <field name="prefix">RX/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_pharmacy_dispense" model="ir.sequence">
+            <field name="name">Pharmacy Dispense</field>
+            <field name="code">pharmacy.dispense</field>
+            <field name="prefix">DSP/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

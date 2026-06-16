@@ -1,0 +1,54 @@
+# =============================================================================
+# PharmaCore - Smart Pharmacy Management  |  Production deployment stack
+# SA Systems - Where Business Grows Smarter
+# -----------------------------------------------------------------------------
+# Pick the Odoo series with ODOO_VERSION in the .env file (17.0 / 18.0 / 19.0).
+# The matching module build is mounted automatically.
+#
+#   cp .env.example .env        # then edit secrets
+#   docker compose up -d
+#   docker compose exec odoo odoo -c /etc/odoo/odoo.conf \
+#         -d ${POSTGRES_DB} -i ${PHARMACY_MODULE} --stop-after-init
+#   docker compose restart odoo
+#
+# Open http://localhost:${ODOO_PORT}  (default 8069)
+# =============================================================================
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-pharmacy}
+      POSTGRES_USER: ${POSTGRES_USER:-odoo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pharmacy-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER:-odoo}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  odoo:
+    image: odoo:${ODOO_VERSION:-18.0}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${ODOO_PORT:-8069}:8069"
+    environment:
+      HOST: db
+      USER: ${POSTGRES_USER:-odoo}
+      PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pharmacy-data:/var/lib/odoo
+      # The module build that matches ODOO_VERSION is mounted read-only.
+      - "../${PHARMACY_MODULE_DIR:-sa_pharmacy_management}:/mnt/extra-addons/${PHARMACY_MODULE:-sa_pharmacy_management}:ro"
+      - "./odoo.conf:/etc/odoo/odoo.conf:ro"
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf"]
+
+volumes:
+  pharmacy-db:
+  pharmacy-data:

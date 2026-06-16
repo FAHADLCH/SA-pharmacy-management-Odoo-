@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_prescription_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row mb-4">
+                            <div class="col-7">
+                                <h2 style="color:#E8242A;margin-bottom:0;">Prescription</h2>
+                                <span class="text-muted" t-field="doc.name"/>
+                            </div>
+                            <div class="col-5 text-end">
+                                <strong t-field="doc.prescription_date"/>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Patient</strong><br/>
+                                <span t-field="doc.patient_id.name"/><br/>
+                                <span t-if="doc.patient_id.age">Age:
+                                    <span t-field="doc.patient_id.age"/></span>
+                            </div>
+                            <div class="col-6">
+                                <strong>Prescriber</strong><br/>
+                                <span t-if="doc.prescriber_id"
+                                      t-field="doc.prescriber_id.name"/>
+                                <span t-else="" t-field="doc.prescriber_name"/><br/>
+                                <span t-if="doc.prescriber_id.prescriber_license">
+                                    Lic:
+                                    <span t-field="doc.prescriber_id.prescriber_license"/>
+                                </span>
+                            </div>
+                        </div>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th class="text-end">Qty</th>
+                                    <th>Dosage (SIG)</th>
+                                    <th class="text-end">Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.line_ids" t-as="line">
+                                    <td><span t-field="line.product_id.display_name"/></td>
+                                    <td class="text-end"><span t-field="line.product_qty"/></td>
+                                    <td><span t-field="line.dosage"/></td>
+                                    <td class="text-end">
+                                        <span t-field="line.duration_days"/> d
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div t-if="doc.diagnosis" class="mt-3">
+                            <strong>Diagnosis:</strong>
+                            <span t-field="doc.diagnosis"/>
+                        </div>
+                        <div t-if="doc.note" class="mt-2">
+                            <strong>Notes:</strong>
+                            <span t-field="doc.note"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
