@@ -54,7 +54,7 @@
     <record id="action_patients" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">kanban,list,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[('is_patient','=',True)]</field>
         <field name="context">{'default_is_patient': True}</field>
         <field name="help" type="html">
@@ -70,7 +70,7 @@
     <record id="action_prescribers" model="ir.actions.act_window">
         <field name="name">Prescribers</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">kanban,list,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[('is_prescriber','=',True)]</field>
         <field name="context">{'default_is_prescriber': True, 'default_is_company': False}</field>
     </record>

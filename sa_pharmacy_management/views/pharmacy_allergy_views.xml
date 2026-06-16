@@ -5,18 +5,18 @@
         <field name="name">pharmacy.allergy.tree</field>
         <field name="model">pharmacy.allergy</field>
         <field name="arch" type="xml">
-            <list string="Allergens" editable="bottom">
+            <tree string="Allergens" editable="bottom">
                 <field name="name"/>
                 <field name="ingredient_id"/>
                 <field name="active" widget="boolean_toggle"/>
-            </list>
+            </tree>
         </field>
     </record>
 
     <record id="action_allergy" model="ir.actions.act_window">
         <field name="name">Allergens</field>
         <field name="res_model">pharmacy.allergy</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Maintain your allergen registry

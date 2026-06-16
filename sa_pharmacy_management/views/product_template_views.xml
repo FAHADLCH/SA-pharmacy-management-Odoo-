@@ -54,7 +54,7 @@
         <field name="name">product.template.medicine.tree</field>
         <field name="model">product.template</field>
         <field name="arch" type="xml">
-            <list string="Medicines">
+            <tree string="Medicines">
                 <field name="default_code" optional="show"/>
                 <field name="name"/>
                 <field name="strength" optional="show"/>
@@ -65,7 +65,7 @@
                 <field name="is_controlled" widget="boolean_toggle"/>
                 <field name="qty_available" string="On Hand"/>
                 <field name="list_price"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -97,11 +97,11 @@
     <record id="action_medicines" model="ir.actions.act_window">
         <field name="name">Medicines</field>
         <field name="res_model">product.template</field>
-        <field name="view_mode">list,kanban,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" ref="view_product_medicine_tree"/>
         <field name="search_view_id" ref="view_product_medicine_search"/>
         <field name="domain">[('is_medicine','=',True)]</field>
-        <field name="context">{'default_is_medicine': True, 'default_type': 'consu', 'default_is_storable': True, 'default_tracking': 'lot', 'default_use_expiration_date': True}</field>
+        <field name="context">{'default_is_medicine': True, 'default_type': 'product', 'default_tracking': 'lot', 'default_use_expiration_date': True}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Add your first medicine

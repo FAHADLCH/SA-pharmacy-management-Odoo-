@@ -87,9 +87,7 @@ class ProductTemplate(models.Model):
             if product.is_medicine:
                 product.tracking = 'lot'
                 product.use_expiration_date = True
-                # Odoo 18: a stockable product is type='consu' + is_storable.
-                product.type = 'consu'
-                product.is_storable = True
+                product.type = 'product'
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -97,15 +95,13 @@ class ProductTemplate(models.Model):
             if vals.get('is_medicine'):
                 vals.setdefault('tracking', 'lot')
                 vals.setdefault('use_expiration_date', True)
-                vals.setdefault('type', 'consu')
-                vals.setdefault('is_storable', True)
+                vals.setdefault('type', 'product')
         return super().create(vals_list)
 
     def write(self, vals):
         if vals.get('is_medicine'):
             vals.setdefault('tracking', 'lot')
             vals.setdefault('use_expiration_date', True)
-            vals.setdefault('is_storable', True)
         return super().write(vals)
 
     def action_pharmacy_substitutes(self):
@@ -157,7 +153,7 @@ class ProductProduct(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'Alternatives for %s' % self.display_name,
             'res_model': 'product.product',
-            'view_mode': 'list,form',
+            'view_mode': 'tree,form',
             'domain': [('id', 'in', subs.ids)],
             'context': {'create': False},
             'help': '<p class="o_view_nocontent_smiling_face">'

@@ -5,7 +5,7 @@
         <field name="name">pharmacy.dispense.tree</field>
         <field name="model">pharmacy.dispense</field>
         <field name="arch" type="xml">
-            <list string="Dispensings"
+            <tree string="Dispensings"
                   decoration-success="state == 'done'"
                   decoration-muted="state == 'cancelled'">
                 <field name="name"/>
@@ -19,7 +19,7 @@
                 <field name="currency_id" column_invisible="1"/>
                 <field name="state" widget="badge"
                        decoration-success="state == 'done'"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -77,7 +77,7 @@
                         </group>
                     </group>
                     <field name="line_ids">
-                        <list editable="bottom">
+                        <tree editable="bottom">
                             <field name="product_id"/>
                             <field name="lot_id"/>
                             <field name="expiration_date"/>
@@ -87,7 +87,7 @@
                             <field name="dosage"/>
                             <field name="subtotal"/>
                             <field name="currency_id" column_invisible="1"/>
-                        </list>
+                        </tree>
                     </field>
                     <group class="oe_subtotal_footer oe_right">
                         <field name="amount_total" widget="monetary"/>
@@ -106,7 +106,7 @@
     <record id="action_dispensings" model="ir.actions.act_window">
         <field name="name">Dispensing</field>
         <field name="res_model">pharmacy.dispense</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Dispense medicines with full batch traceability

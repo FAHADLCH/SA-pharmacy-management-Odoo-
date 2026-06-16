@@ -5,14 +5,14 @@
         <field name="name">pharmacy.active.ingredient.tree</field>
         <field name="model">pharmacy.active.ingredient</field>
         <field name="arch" type="xml">
-            <list string="Active Ingredients">
+            <tree string="Active Ingredients">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="atc_code"/>
                 <field name="therapeutic_class"/>
                 <field name="is_controlled" widget="boolean_toggle"/>
                 <field name="product_count" string="Medicines"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -58,7 +58,7 @@
     <record id="action_active_ingredient" model="ir.actions.act_window">
         <field name="name">Active Ingredients</field>
         <field name="res_model">pharmacy.active.ingredient</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Build your active-ingredient library

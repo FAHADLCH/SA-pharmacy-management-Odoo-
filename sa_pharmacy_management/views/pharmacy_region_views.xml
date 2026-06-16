@@ -5,7 +5,7 @@
         <field name="name">pharmacy.region.list</field>
         <field name="model">pharmacy.region</field>
         <field name="arch" type="xml">
-            <list string="Regions">
+            <tree string="Regions">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="code"/>
@@ -13,7 +13,7 @@
                 <field name="receipt_paper"/>
                 <field name="rx_validity_days"/>
                 <field name="narcotic_register_required" widget="boolean_toggle"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -68,7 +68,7 @@
     <record id="action_pharmacy_regions" model="ir.actions.act_window">
         <field name="name">Regions</field>
         <field name="res_model">pharmacy.region</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Configure a regional profile
