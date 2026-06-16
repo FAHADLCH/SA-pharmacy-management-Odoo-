@@ -1,45 +1,50 @@
 <!-- ============================================================== -->
 <!--  PharmaCore - Smart Pharmacy Management                        -->
 <!--  Odoo Apps Store listing  -  SA Systems                        -->
-<!--  IMPORTANT: Odoo's store sanitizer STRIPS background, gradient, -->
-<!--  box-shadow, filter, position, z-index. Page bg is always      -->
-<!--  white, so this design is LIGHT + border-based only. All        -->
-<!--  special characters use ASCII HTML entities (encoding-safe).    -->
+<!--                                                                 -->
+<!--  ODOO STORE SANITIZER RULES (verified live):                   -->
+<!--   STRIPS: background, gradient, box-shadow, filter, position,   -->
+<!--           z-index, flex, flex-wrap, gap, justify-content,       -->
+<!--           align-items  (only bare display:flex survives).      -->
+<!--   KEEPS : display(inline-block/block), width, min/max-width,    -->
+<!--           vertical-align, text-align, color, border, padding,   -->
+<!--           margin, font-*, line-height, letter-spacing, opacity. -->
+<!--  => Layout uses INLINE-BLOCK + fixed width (never flex/grid),   -->
+<!--     so cards wrap by normal flow and stay proportional at every -->
+<!--     screen size. All non-ASCII chars are ASCII HTML entities.   -->
 <!-- ============================================================== -->
 <section class="oe_container" style="margin:0;padding:0;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1f2933;line-height:1.5;">
 
   <!-- ================= HERO (banner image) ================= -->
-  <div style="margin:0 0 8px;">
-    <img src="banner.png" alt="PharmaCore &#x2014; Smart Pharmacy Management for Odoo" style="display:block;width:100%;height:auto;border-radius:18px;"/>
+  <div style="margin:0 0 8px;text-align:center;">
+    <img src="banner.png" alt="PharmaCore &#x2014; Smart Pharmacy Management for Odoo" style="display:block;width:100%;max-width:1200px;height:auto;margin:0 auto;border-radius:18px;"/>
   </div>
 
   <!-- ================= PROOF STRIP ================= -->
-  <div style="max-width:1040px;margin:28px auto 0;padding:0 24px;">
-    <div style="display:flex;flex-wrap:wrap;border:1px solid #e4e7eb;border-radius:18px;">
-      <div style="flex:1 1 180px;text-align:center;padding:22px 16px;border-right:1px solid #eef1f4;">
-        <div style="font-size:30px;font-weight:800;color:#E8242A;">8</div>
-        <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Clinical modules</div>
-      </div>
-      <div style="flex:1 1 180px;text-align:center;padding:22px 16px;border-right:1px solid #eef1f4;">
-        <div style="font-size:30px;font-weight:800;color:#E8242A;">17&#xB7;18&#xB7;19</div>
-        <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Odoo series supported</div>
-      </div>
-      <div style="flex:1 1 180px;text-align:center;padding:22px 16px;border-right:1px solid #eef1f4;">
-        <div style="font-size:30px;font-weight:800;color:#E8242A;">0&nbsp;keys</div>
-        <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Built-in offline AI</div>
-      </div>
-      <div style="flex:1 1 180px;text-align:center;padding:22px 16px;">
-        <div style="font-size:30px;font-weight:800;color:#E8242A;">$5</div>
-        <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">One-time, lifetime</div>
-      </div>
+  <div style="max-width:1000px;margin:30px auto 0;padding:18px 8px;text-align:center;border:1px solid #e4e7eb;border-radius:18px;">
+    <div style="display:inline-block;vertical-align:top;width:190px;padding:10px 6px;">
+      <div style="font-size:30px;font-weight:800;color:#E8242A;">8</div>
+      <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Clinical modules</div>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:190px;padding:10px 6px;">
+      <div style="font-size:30px;font-weight:800;color:#E8242A;">17&#xB7;18&#xB7;19</div>
+      <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Odoo series supported</div>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:190px;padding:10px 6px;">
+      <div style="font-size:30px;font-weight:800;color:#E8242A;">0&nbsp;keys</div>
+      <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">Built-in offline AI</div>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:190px;padding:10px 6px;">
+      <div style="font-size:30px;font-weight:800;color:#E8242A;">$5</div>
+      <div style="font-size:13px;color:#6b7280;letter-spacing:0.4px;">One-time, lifetime</div>
     </div>
   </div>
 
   <!-- ================= PAIN / PROMISE ================= -->
-  <div style="max-width:880px;margin:54px auto 0;padding:0 24px;text-align:center;">
+  <div style="max-width:820px;margin:54px auto 0;padding:0 24px;text-align:center;">
     <div style="color:#E8242A;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:14px;">More than inventory</div>
-    <h2 style="font-size:32px;font-weight:800;margin:0 0 16px;line-height:1.2;color:#14181d;">Standard Odoo tracks stock. It doesn't run a pharmacy.</h2>
-    <p style="font-size:18px;color:#52606d;line-height:1.65;margin:0 auto;max-width:780px;">
+    <h2 style="font-size:30px;font-weight:800;margin:0 0 16px;line-height:1.25;color:#14181d;">Standard Odoo tracks stock. It doesn't run a pharmacy.</h2>
+    <p style="font-size:17px;color:#52606d;line-height:1.65;margin:0 auto;max-width:740px;">
       Generic inventory tracks lots &#x2014; but it can't dispense the
       <strong style="color:#1f2933;">first-to-expire</strong> batch, screen for
       <strong style="color:#1f2933;">drug interactions</strong>, stop an
@@ -51,149 +56,146 @@
   </div>
 
   <!-- ================= FEATURE GRID ================= -->
-  <div style="max-width:1040px;margin:46px auto 0;padding:0 24px;">
-    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+  <!-- inline-block cards: fixed width => identical proportions, wrap by flow -->
+  <div style="max-width:920px;margin:44px auto 0;padding:0 10px;text-align:center;font-size:0;">
 
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x23F3;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">FEFO Dispensing</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          A true <strong style="color:#1f2933;">First-Expiry-First-Out</strong> removal
-          strategy Odoo doesn't ship natively. The batch closest to expiry is always
-          suggested and picked first &#x2014; automatically.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x26A0;&#xFE0F;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Drug Interaction Screening</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Every prescription is checked against your interaction library in real
-          time. Severity-graded alerts &#x2014; from minor to
-          <strong style="color:#1f2933;">contraindicated</strong> &#x2014; appear before you dispense.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F6E1;&#xFE0F;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Allergy Safety Stop</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Patient allergies are matched to active ingredients. If a medicine
-          conflicts, PharmaCore <strong style="color:#1f2933;">blocks the dispense</strong> until a
-          pharmacist resolves it. No silent mistakes.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F916;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">AI Clinical Assistant</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Risk scoring, substitution suggestions and smart reorder forecasting.
-          Runs on a built-in <strong style="color:#1f2933;">offline engine</strong> &#x2014; or plug in any
-          OpenAI-compatible endpoint. No API key required.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F4CB;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Prescription Lifecycle (Rx)</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Draft &#x2192; Validated &#x2192; Dispensed, with refills, validity dates and a
-          prescriber registry. Partial dispensing and remaining-quantity tracking
-          handled out of the box.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F512;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Controlled Substance Register</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Scheduled drugs are flagged automatically and every dispense is logged
-          with pharmacist, patient and batch &#x2014; an audit trail your regulator
-          will love.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F4B1;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Multicurrency Dispensing</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          Bill patients in any currency. Prices convert automatically from your
-          company rates, so cross-border and tourist sales stay accurate without a
-          single manual calculation.
-        </p>
-      </div>
-
-      <div style="flex:1 1 300px;min-width:280px;border:1px solid #e4e7eb;border-radius:18px;padding:28px;">
-        <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">&#x1F4CA;</div>
-        <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Analytics Dashboard</h3>
-        <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
-          One screen for revenue trends, top-selling medicines, prescription
-          status, clinical-risk distribution and near-expiry batches &#x2014; with
-          pivot &amp; graph drill-downs for deeper analysis.
-        </p>
-      </div>
-
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x23F3;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">FEFO Dispensing</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        A true <strong style="color:#1f2933;">First-Expiry-First-Out</strong> removal
+        strategy Odoo doesn't ship natively. The batch closest to expiry is always
+        suggested and picked first &#x2014; automatically.
+      </p>
     </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x26A0;&#xFE0F;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Drug Interaction Screening</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Every prescription is checked against your interaction library in real
+        time. Severity-graded alerts &#x2014; from minor to
+        <strong style="color:#1f2933;">contraindicated</strong> &#x2014; appear before you dispense.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F6E1;&#xFE0F;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Allergy Safety Stop</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Patient allergies are matched to active ingredients. If a medicine
+        conflicts, PharmaCore <strong style="color:#1f2933;">blocks the dispense</strong> until a
+        pharmacist resolves it. No silent mistakes.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F916;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">AI Clinical Assistant</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Risk scoring, substitution suggestions and smart reorder forecasting.
+        Runs on a built-in <strong style="color:#1f2933;">offline engine</strong> &#x2014; or plug in any
+        OpenAI-compatible endpoint. No API key required.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F4CB;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Prescription Lifecycle (Rx)</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Draft &#x2192; Validated &#x2192; Dispensed, with refills, validity dates and a
+        prescriber registry. Partial dispensing and remaining-quantity tracking
+        handled out of the box.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F512;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Controlled Substance Register</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Scheduled drugs are flagged automatically and every dispense is logged
+        with pharmacist, patient and batch &#x2014; an audit trail your regulator
+        will love.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F4B1;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Multicurrency Dispensing</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        Bill patients in any currency. Prices convert automatically from your
+        company rates, so cross-border and tourist sales stay accurate without a
+        single manual calculation.
+      </p>
+    </div>
+
+    <div style="display:inline-block;vertical-align:top;text-align:left;width:222px;margin:8px;border:1px solid #e4e7eb;border-radius:18px;padding:20px;font-size:15px;">
+      <div style="width:46px;height:46px;border-radius:12px;border:1px solid #f6d3d4;text-align:center;line-height:46px;font-size:22px;margin-bottom:16px;">&#x1F4CA;</div>
+      <h3 style="font-size:19px;font-weight:700;margin:0 0 8px;color:#14181d;">Analytics Dashboard</h3>
+      <p style="color:#52606d;font-size:15px;line-height:1.55;margin:0;">
+        One screen for revenue trends, top-selling medicines, prescription
+        status, clinical-risk distribution and near-expiry batches &#x2014; with
+        pivot &amp; graph drill-downs for deeper analysis.
+      </p>
+    </div>
+
   </div>
 
   <!-- ================= COMPARISON ================= -->
-  <div style="max-width:920px;margin:64px auto 0;padding:0 24px;">
-    <h2 style="text-align:center;font-size:30px;font-weight:800;margin:0 0 8px;color:#14181d;">PharmaCore vs. Standard Odoo</h2>
-    <p style="color:#6b7280;text-align:center;margin:0 0 28px;font-size:16px;">The difference between tracking stock and running a pharmacy.</p>
+  <div style="max-width:920px;margin:60px auto 0;padding:0 16px;">
+    <h2 style="text-align:center;font-size:28px;font-weight:800;margin:0 0 8px;color:#14181d;">PharmaCore vs. Standard Odoo</h2>
+    <p style="color:#6b7280;text-align:center;margin:0 0 26px;font-size:16px;">The difference between tracking stock and running a pharmacy.</p>
     <table style="width:100%;border-collapse:collapse;border:1px solid #e4e7eb;border-radius:14px;">
       <thead>
         <tr style="border-bottom:2px solid #e4e7eb;">
-          <th style="text-align:left;color:#14181d;padding:16px 20px;font-size:14px;">Capability</th>
-          <th style="color:#6b7280;padding:16px 12px;font-size:14px;">Standard Odoo</th>
-          <th style="color:#E8242A;padding:16px 12px;font-size:14px;">PharmaCore</th>
+          <th style="text-align:left;color:#14181d;padding:14px 14px;font-size:14px;">Capability</th>
+          <th style="color:#6b7280;padding:14px 6px;font-size:13px;width:88px;">Standard Odoo</th>
+          <th style="color:#E8242A;padding:14px 6px;font-size:13px;width:88px;">PharmaCore</th>
         </tr>
       </thead>
       <tbody style="color:#52606d;font-size:15px;">
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">First-Expiry-First-Out removal</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Drug-drug interaction alerts</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Allergy-aware dispensing block</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">AI risk scoring &amp; smart reorder</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Prescription (Rx) workflow with refills</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Controlled-substance audit register</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Near-expiry dashboard &amp; auto-alerts</td><td style="text-align:center;color:#9aa3ad;">Partial</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
-        <tr style="border-top:1px solid #eef1f4;"><td style="padding:14px 20px;">Native Inventory, Sales &amp; Accounting</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">First-Expiry-First-Out removal</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Drug-drug interaction alerts</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Allergy-aware dispensing block</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">AI risk scoring &amp; smart reorder</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Prescription (Rx) workflow with refills</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Controlled-substance audit register</td><td style="text-align:center;color:#b0b8c1;">&#x2014;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Near-expiry dashboard &amp; auto-alerts</td><td style="text-align:center;color:#9aa3ad;">Partial</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
+        <tr style="border-top:1px solid #eef1f4;"><td style="padding:13px 14px;">Native Inventory, Sales &amp; Accounting</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td><td style="text-align:center;color:#1a8a4f;font-weight:700;">&#x2713;</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- ================= WORKFLOW ================= -->
-  <div style="max-width:1000px;margin:64px auto 0;padding:0 24px;">
-    <h2 style="text-align:center;font-size:30px;font-weight:800;margin:0 0 36px;color:#14181d;">Counter to compliance in four steps</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:18px;">
-      <div style="flex:1 1 210px;text-align:center;padding:20px;">
-        <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:50px;margin:0 auto 14px;">1</div>
-        <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Capture the Rx</h4>
-        <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Log patient, prescriber and items. Interactions &amp; allergies screen instantly.</p>
-      </div>
-      <div style="flex:1 1 210px;text-align:center;padding:20px;">
-        <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:50px;margin:0 auto 14px;">2</div>
-        <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Validate safely</h4>
-        <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Pharmacist reviews AI risk &amp; alerts, then validates with a full audit trail.</p>
-      </div>
-      <div style="flex:1 1 210px;text-align:center;padding:20px;">
-        <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:50px;margin:0 auto 14px;">3</div>
-        <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Dispense by FEFO</h4>
-        <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Earliest-expiry batch is auto-suggested; stock delivery posts in one click.</p>
-      </div>
-      <div style="flex:1 1 210px;text-align:center;padding:20px;">
-        <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:50px;margin:0 auto 14px;">4</div>
-        <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Label &amp; bill</h4>
-        <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Print dosage labels and invoice through native Accounting. Done.</p>
-      </div>
+  <div style="max-width:980px;margin:60px auto 0;padding:0 12px;text-align:center;font-size:0;">
+    <h2 style="text-align:center;font-size:28px;font-weight:800;margin:0 0 30px;color:#14181d;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">Counter to compliance in four steps</h2>
+    <div style="display:inline-block;vertical-align:top;width:202px;margin:8px;padding:6px;font-size:14px;">
+      <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:54px;margin:0 auto 14px;text-align:center;">1</div>
+      <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Capture the Rx</h4>
+      <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Log patient, prescriber and items. Interactions &amp; allergies screen instantly.</p>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:202px;margin:8px;padding:6px;font-size:14px;">
+      <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:54px;margin:0 auto 14px;text-align:center;">2</div>
+      <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Validate safely</h4>
+      <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Pharmacist reviews AI risk &amp; alerts, then validates with a full audit trail.</p>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:202px;margin:8px;padding:6px;font-size:14px;">
+      <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:54px;margin:0 auto 14px;text-align:center;">3</div>
+      <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Dispense by FEFO</h4>
+      <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Earliest-expiry batch is auto-suggested; stock delivery posts in one click.</p>
+    </div>
+    <div style="display:inline-block;vertical-align:top;width:202px;margin:8px;padding:6px;font-size:14px;">
+      <div style="width:54px;height:54px;border-radius:50%;border:2px solid #E8242A;color:#E8242A;font-weight:800;font-size:22px;line-height:54px;margin:0 auto 14px;text-align:center;">4</div>
+      <h4 style="margin:0 0 6px;font-size:17px;color:#14181d;">Label &amp; bill</h4>
+      <p style="color:#52606d;font-size:14px;line-height:1.5;margin:0;">Print dosage labels and invoice through native Accounting. Done.</p>
     </div>
   </div>
 
   <!-- ================= PRICING / CTA ================= -->
-  <div style="max-width:680px;margin:64px auto 0;padding:0 24px;">
-    <div style="border:2px solid #E8242A;border-radius:24px;padding:44px 32px;text-align:center;">
+  <div style="max-width:640px;margin:60px auto 0;padding:0 24px;">
+    <div style="border:2px solid #E8242A;border-radius:24px;padding:42px 28px;text-align:center;">
       <p style="text-transform:uppercase;letter-spacing:2px;font-size:13px;color:#E8242A;font-weight:700;margin:0 0 12px;">One-time price &#x2022; Lifetime feature set</p>
-      <div style="font-size:64px;font-weight:800;line-height:1;margin:0 0 8px;color:#E8242A;">$5</div>
+      <div style="font-size:60px;font-weight:800;line-height:1;margin:0 0 8px;color:#E8242A;">$5</div>
       <p style="font-size:17px;color:#52606d;margin:0 0 24px;">A clinical-grade pharmacy upgrade for the price of a coffee.</p>
       <div style="display:inline-block;border:2px solid #E8242A;color:#E8242A;font-weight:700;font-size:16px;padding:13px 32px;border-radius:40px;">
         Add PharmaCore to your Odoo
@@ -203,17 +205,15 @@
   </div>
 
   <!-- ================= TRUST BADGES ================= -->
-  <div style="max-width:1000px;margin:48px auto 0;padding:0 24px;text-align:center;">
-    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
-      <span style="border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;">Built on Native Odoo</span>
-      <span style="border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;">Offline AI &#x2014; No API Key</span>
-      <span style="border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;">GDPR-Conscious</span>
-      <span style="border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;">Multi-Company Ready</span>
-    </div>
+  <div style="max-width:960px;margin:44px auto 0;padding:0 24px;text-align:center;">
+    <span style="display:inline-block;border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;margin:5px;">Built on Native Odoo</span>
+    <span style="display:inline-block;border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;margin:5px;">Offline AI &#x2014; No API Key</span>
+    <span style="display:inline-block;border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;margin:5px;">GDPR-Conscious</span>
+    <span style="display:inline-block;border:1px solid #e4e7eb;color:#52606d;font-size:13px;padding:8px 16px;border-radius:30px;margin:5px;">Multi-Company Ready</span>
   </div>
 
   <!-- ================= FOOTER ================= -->
-  <div style="max-width:1000px;margin:52px auto 0;padding:34px 24px 16px;text-align:center;border-top:1px solid #e4e7eb;">
+  <div style="max-width:960px;margin:50px auto 0;padding:32px 24px 16px;text-align:center;border-top:1px solid #e4e7eb;">
     <img src="logo.png" alt="SA Systems" style="height:40px;margin-bottom:16px;"/>
     <p style="color:#14181d;font-size:16px;font-weight:700;margin:0 0 6px;">One Team. Infinite Solutions.</p>
     <p style="color:#52606d;font-size:14px;margin:0 0 12px;">
