@@ -21,6 +21,9 @@ dist/
 *.conf.local
 deploy/odoo.conf.local
 
+# ---- Local config with credentials (use odoo.conf.example as a template) ----
+/odoo.conf
+
 # ---- Docker / demo runtime volumes ----
 _demo/odoo-data/
 _demo/db-data/

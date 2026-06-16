@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:16
+    container_name: sa_pharmacy_db
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - sa_pharmacy_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  odoo:
+    # Pick the Odoo series to test: 17, 18 (default) or 19.
+    image: odoo:${ODOO_VERSION:-18}
+    container_name: sa_pharmacy_odoo
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8069:8069"
+      - "8072:8072"   # longpolling / live chat
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+    volumes:
+      - sa_pharmacy_odoo_data:/var/lib/odoo
+      # Mount the module build that matches ODOO_VERSION.
+      #   18 -> sa_pharmacy_management   |   17 -> sa_pharmacy_management_17   |   19 -> sa_pharmacy_management_19
+      - ./${PHARMACY_MODULE_DIR:-sa_pharmacy_management}:/mnt/extra-addons/${PHARMACY_MODULE:-sa_pharmacy_management}:ro
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
+    command: >
+      odoo
+      -c /etc/odoo/odoo.conf
+      -d sa_demo
+      -i ${PHARMACY_MODULE:-sa_pharmacy_management}
+
+volumes:
+  sa_pharmacy_pgdata:
+  sa_pharmacy_odoo_data:
