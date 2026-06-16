@@ -16,7 +16,7 @@ services:
 
   odoo:
     # Pick the Odoo series to test: 17, 18 (default) or 19.
-    image: odoo:${ODOO_VERSION:-18}
+    image: odoo:${ODOO_VERSION:-19}
     container_name: sa_pharmacy_odoo
     depends_on:
       db:

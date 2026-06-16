@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'PharmaCore - Smart Pharmacy Management',
-    'version': '18.0.2.0.0',
+    'version': '19.0.2.0.0',
     'category': 'Inventory/Inventory',
     'summary': 'AI-assisted pharmacy & drugstore management: prescriptions (Rx), '
                'FEFO batch/expiry control, drug-interaction & allergy alerts, '
