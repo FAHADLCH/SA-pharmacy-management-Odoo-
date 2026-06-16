@@ -1,0 +1,81 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#171c22"/>
+      <stop offset="0.5" stop-color="#12161b"/>
+      <stop offset="1" stop-color="#2a0d10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.28" r="0.6">
+      <stop offset="0" stop-color="#E8242A" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#E8242A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cross" x1="820" y1="150" x2="1040" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3b41"/>
+      <stop offset="1" stop-color="#cf1d23"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="880" y1="190" x2="990" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9eef4"/>
+    </linearGradient>
+    <linearGradient id="pillbtn" x1="120" y1="430" x2="430" y2="490" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8242A"/>
+      <stop offset="1" stop-color="#b51d22"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <rect width="1200" height="600" fill="url(#glow)"/>
+
+  <!-- faint hex grid motif on the right -->
+  <g opacity="0.06" stroke="#ffffff" stroke-width="3" fill="none">
+    <path d="M930 70 L1010 116 L1010 208 L930 254 L850 208 L850 116 Z"/>
+    <path d="M1080 160 L1160 206 L1160 298 L1080 344 L1000 298 L1000 206 Z"/>
+    <path d="M930 250 L1010 296 L1010 388 L930 434 L850 388 L850 296 Z"/>
+  </g>
+
+  <!-- hero pharmacy cross + capsule -->
+  <g filter="url(#soft)">
+    <path d="M905 165 H975 A16 16 0 0 1 991 181 V236 H1046 A16 16 0 0 1 1062 252 V312 A16 16 0 0 1 1046 328 H991 V383 A16 16 0 0 1 975 399 H905 A16 16 0 0 1 889 383 V328 H834 A16 16 0 0 1 818 312 V252 A16 16 0 0 1 834 236 H889 V181 A16 16 0 0 1 905 165 Z" fill="url(#cross)"/>
+  </g>
+  <g transform="rotate(40 940 282)">
+    <rect x="916" y="180" width="48" height="204" rx="24" fill="url(#cap)"/>
+    <rect x="916" y="180" width="48" height="102" rx="24" fill="#ff6b6f" fill-opacity="0.92"/>
+  </g>
+
+  <!-- eyebrow -->
+  <rect x="96" y="118" width="372" height="40" rx="20" fill="#E8242A" fill-opacity="0.16" stroke="#E8242A" stroke-opacity="0.6"/>
+  <text x="120" y="144" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="2" font-weight="700" fill="#ff8a8d">SMART PHARMACY MANAGEMENT · ODOO 17–19</text>
+
+  <!-- title -->
+  <text x="94" y="240" font-family="Helvetica, Arial, sans-serif" font-size="92" font-weight="800" fill="#ffffff">PharmaCore</text>
+  <text x="98" y="300" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="300" fill="#cfd6de">The clinical-grade pharmacy layer Odoo never shipped.</text>
+
+  <!-- feature chips -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="600">
+    <g>
+      <rect x="96" y="332" width="186" height="44" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="120" y="360" fill="#e7ecf2">FEFO expiry control</text>
+    </g>
+    <g>
+      <rect x="294" y="332" width="220" height="44" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="318" y="360" fill="#e7ecf2">Drug-safety screening</text>
+    </g>
+    <g>
+      <rect x="526" y="332" width="180" height="44" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+      <text x="550" y="360" fill="#e7ecf2">Rx + AI insights</text>
+    </g>
+  </g>
+
+  <!-- CTA pill -->
+  <g filter="url(#soft)">
+    <rect x="96" y="430" width="250" height="64" rx="32" fill="url(#pillbtn)"/>
+    <text x="221" y="470" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Add to your Odoo</text>
+  </g>
+  <text x="372" y="470" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">$5 <tspan font-weight="300" fill="#8a94a1">· one-time</tspan></text>
+
+  <!-- brand footer -->
+  <text x="96" y="556" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#8a94a1">SA Systems — Where Business Grows Smarter</text>
+</svg>
